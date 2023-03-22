@@ -16,6 +16,7 @@
 					<h1>{{ title }}</h1>
 				</div>
 				<div class="container py-3">
+					<input type="text" @keyup.enter="addTask" v-model="newTask" name="task" placeholder="Inserisci una nuova task" class="w-100 mb-4">
 					<ul class="list-group">
 						<li class="list-group-item">A disabled item</li>
 						<li class="list-group-item">A second item</li>
