@@ -21,7 +21,20 @@ createApp({
 				});
 		},
 		addTask() {
-			axios.post("./server.php");
+			$data = {
+				task: this.newTask,
+			};
+
+			axios
+				.post("./server.php", $data, {
+					headers: {
+						"Content-Type": "multipart/form-data",
+					},
+				})
+				.then((res) => {
+					this.tasks = res.data;
+					this.newTask = "";
+				});
 		},
 	},
 	mounted() {

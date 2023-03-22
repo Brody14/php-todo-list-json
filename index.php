@@ -18,7 +18,7 @@
 				<div class="container py-3">
 					<input type="text" @keyup.enter="addTask" v-model="newTask" name="task" placeholder="Inserisci una nuova task" class="w-100 mb-4">
 					<ul class="list-group">
-						<li class="list-group-item" v-for="task in tasks"> {{ task }} </li>
+						<li class="list-group-item" v-for="task in tasks" :key="task"> {{ task }} </li>
 					</ul>
 				</div>
 			</section>
