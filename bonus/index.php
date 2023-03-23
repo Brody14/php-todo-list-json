@@ -24,7 +24,7 @@
 						v-for="(task, i) in tasks" 
 						:key="task.text" 
 						@click.stop="editTask(i)"> 
-						{{ task['text'] }} 
+						{{ task.text }} 
 						<span @click.stop="deleteTask(i)"><i class="fa-solid fa-trash-can ms-0"></i> </span>
 						</li>
 					</ul>

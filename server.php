@@ -7,8 +7,12 @@ $tasks = json_decode($todo_string, true);
 $new_task = isset($_POST['task']) ? $_POST['task'] : null;
 
 
-if($new_task !== null && trim($new_task) !== '') {
-    $tasks[] = $new_task;
+if($new_task) {
+    $response = [
+        'text' => trim($new_task),
+        'done' => false,
+    ];
+    $tasks[] = $response;
 }
 
 $new_task_string = json_encode($tasks);

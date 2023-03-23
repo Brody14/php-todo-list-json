@@ -13,7 +13,7 @@ createApp({
 			axios
 				.get("./server.php")
 				.then((res) => {
-					//console.log(res.data);
+					console.log(res.data);
 					this.tasks = res.data;
 				})
 				.catch((error) => {
@@ -21,12 +21,16 @@ createApp({
 				});
 		},
 		addTask() {
-			$data = {
-				task: this.newTask,
+			if (!this.newTask.trim()) {
+				return;
+			}
+
+			let data = {
+				task: this.newTask.trim(),
 			};
 
 			axios
-				.post("./server.php", $data, {
+				.post("./server.php", data, {
 					headers: {
 						"Content-Type": "multipart/form-data",
 					},
@@ -39,12 +43,12 @@ createApp({
 		editTask(i) {
 			//console.log(i);
 
-			$data = {
+			let data = {
 				edit: i,
 			};
 
 			axios
-				.post("./server.php", $data, {
+				.post("./server.php", data, {
 					headers: {
 						"Content-Type": "multipart/form-data",
 					},
@@ -55,12 +59,12 @@ createApp({
 		},
 		deleteTask(i) {
 			//console.log(i);
-			$data = {
+			let data = {
 				delete: i,
 			};
 
 			axios
-				.post("./server.php", $data, {
+				.post("./server.php", data, {
 					headers: {
 						"Content-Type": "multipart/form-data",
 					},

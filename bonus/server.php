@@ -6,15 +6,15 @@ $tasks = json_decode($todo_string, true);
 
 $new_task = isset($_POST['task']) ? $_POST['task'] : null;
 
-$response = [
-    'text' => $new_task,
-    'done' => false,
-];
 
-
-if($new_task !== null && trim($new_task) !== '') {
+if($new_task) {
+    $response = [
+        'text' => trim($new_task),
+        'done' => false,
+    ];
     $tasks[] = $response;
 }
+
 
 $index = isset($_POST['edit']) ? $_POST['edit']  : null;
 
