@@ -30,7 +30,7 @@ createApp({
 			};
 
 			axios
-				.post("./server.php", data, {
+				.post("./addtask.php", data, {
 					headers: {
 						"Content-Type": "multipart/form-data",
 					},
@@ -48,7 +48,7 @@ createApp({
 			};
 
 			axios
-				.post("./server.php", data, {
+				.post("./edittask.php", data, {
 					headers: {
 						"Content-Type": "multipart/form-data",
 					},
@@ -64,7 +64,7 @@ createApp({
 			};
 
 			axios
-				.post("./server.php", data, {
+				.post("./deletetask.php", data, {
 					headers: {
 						"Content-Type": "multipart/form-data",
 					},
